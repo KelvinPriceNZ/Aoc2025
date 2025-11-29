@@ -1,0 +1,6 @@
+.token
+input.txt
+input/*
+__pycache__
+.idea
+nimbledeps/
