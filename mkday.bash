@@ -25,6 +25,10 @@ printf -v day "%02d" $1
 #cp -p solve.py $day/part1.py
 #cp -p solve.py $day/part2.py
 
+[[ ! -d src ]] && mkdir -p src
+
+echo "#lang racket" > src/day${day}.rkt
+
 ./render_md.py $day
 
 FILE="input/${day}/input.txt"
