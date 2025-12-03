@@ -11,5 +11,5 @@ j2template = j2env.get_template("./Puzzle.md.j2")
 
 md = j2template.render(day=puzzle_day)
 
-with open(f"{puzzle_day:02d}/Puzzle.md", "w") as f:
+with open(f"src/{puzzle_day:02d}/Puzzle.md", "w") as f:
    f.write(md)

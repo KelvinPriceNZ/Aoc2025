@@ -20,18 +20,13 @@ fi
 
 printf -v day "%02d" $1
 
-[ ! -d $day ] && mkdir -p $day
+[[ ! -d src/day${day} ]] && mkdir -p src/day${day}
 
-#cp -p solve.py $day/part1.py
-#cp -p solve.py $day/part2.py
-
-[[ ! -d src ]] && mkdir -p src
-
-echo "#lang racket" > src/day${day}.rkt
+echo "#lang racket" > src/day${day}/part1.rkt
 
 ./render_md.py $day
 
-FILE="input/${day}/input.txt"
+FILE="input/day${day}/input.txt"
 [ ! -d $(dirname $FILE) ] && mkdir -p $(dirname $FILE)
 
 if [ ! -s ./${FILE} ]
@@ -49,3 +44,4 @@ fi
 
 head ${FILE}
 tail ${FILE}
+wc -l ${FILE}
