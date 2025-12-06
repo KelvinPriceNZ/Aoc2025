@@ -5,6 +5,7 @@
   (define l (string-length num))
   (define g #f)
   (for ([p (in-range 1 (add1 (quotient l 2)))])
+    #:break (equal? g #t)
     (define patt (pregexp (string-append "^(?:" (substring num 0 p) "){" (number->string (floor (/ l p))) "}$")))
     (when (regexp-match? patt num)
       (set! g #t)
