@@ -1,5 +1,5 @@
 #lang racket
-(require helpful)
+
 (define (badnum? n)
   (define num (number->string n))
   (define l (string-length num))
