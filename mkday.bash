@@ -22,7 +22,11 @@ printf -v day "%02d" $1
 
 [[ ! -d src/day${day} ]] && mkdir -p src/day${day}
 
-echo "#lang racket" > src/day${day}/part1.rkt
+echo "#lang racket
+
+(define DAY_INPUT \"../../input/day${day}/input.txt\")
+
+" > src/day${day}/part1.rkt
 
 ./render_md.py $day
 
