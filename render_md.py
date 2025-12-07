@@ -13,3 +13,10 @@ md = j2template.render(day=puzzle_day)
 
 with open(f"src/day{puzzle_day:02d}/Puzzle.md", "w") as f:
    f.write(md)
+
+j2template = j2env.get_template("./partx.rkt.j2")
+
+md = j2template.render(day=puzzle_day)
+
+with open(f"src/day{puzzle_day:02d}/part1.rkt", "w") as f:
+   f.write(md)
