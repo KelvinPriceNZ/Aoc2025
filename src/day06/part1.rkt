@@ -10,7 +10,7 @@
 (define calc '())
 
 (for ([line lines])
-  (set! calc (append calc (list (regexp-split #px"\\s+" line))))
+  (set! calc (append calc (list (string-split line))))
   )
 
 ; transpose list of list
