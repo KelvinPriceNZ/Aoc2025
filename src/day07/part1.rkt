@@ -8,7 +8,7 @@
 (define cols (string-length (list-ref lines 0)))
 
 (define (char-at grid row col)
-  (substring (list-ref grid row) col (add1 col))
+  (string (string-ref (list-ref grid row) col))
   )
 
 
